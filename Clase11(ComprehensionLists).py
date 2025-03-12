@@ -1,27 +1,27 @@
 #SQUARES
-squares1=[x**2 for x in range(1,11)]
+# squares1=[x**2 for x in range(1,11)]
 # 1x1=1 -> x variable del range
 # 2X2=4
-numbers=[1,2,3,4,5,6,7,8,9,10,11]
-squares2=[x**3 for x in numbers]
+# numbers=[1,2,3,4,5,6,7,8,9,10,11]
+# squares2=[x**3 for x in numbers]
 # 1x1x1=1 -> x variable del range
 # 2X2x2=8
-print(squares2)
+# print(squares2)
 
 #CONVERT CELSIUS TO FARENHEIT
 #°F=(9/5*°C)+32
-celsius=[0,10,20,30,40]
-fahrenheit=[(temp*9/5)*32 for temp in celsius]
+# celsius=[0,10,20,30,40]
+# fahrenheit=[(temp*9/5)*32 for temp in celsius]
 # (10*9/5)*32=576
 # (20*9/5)*32=1152
-print("Temperatura en F:", fahrenheit)
+# print("Temperatura en F:", fahrenheit)
 
 #Numeros pares 
-evens=[x for x in range(1,21) if x%2==0]
-print("Numeros pares:",evens)
+# evens=[x for x in range(1,21) if x%2==0]
+# print("Numeros pares:",evens)
 
-matrix=[[1,2,3],[4,5,6],[7,8,9]]
-transposed=[[row[i] for row in matrix] for i in range(len(matrix[0]))]
+# matrix=[[1,2,3],[4,5,6],[7,8,9]]
+# transposed=[[row[i] for row in matrix] for i in range(len(matrix[0]))]
 #EXPLICACIÓN DEL CODIGO.
 #parte1: Esta expresión obtiene la cantidad de columnas de la matriz original.
 #numbers_columns=len(matrix[0])
@@ -33,7 +33,7 @@ transposed=[[row[i] for row in matrix] for i in range(len(matrix[0]))]
 #parte3 [row[i] for row in matrix] -> Esta es la parte interna de la lista por comprension.
 #Cada valor de i (que representa el numero de columna), recoge los elementos de esa columna para todas las filas.
 #Ejemplo con i=0 
-#[row[0] for in matrix]
+#[row[0] for row in matrix]
 #Proceso:
 #Para row = [1, 2, 3] → row[0] es 1.
 #Para row = [4, 5, 6] → row[0] es 4.
@@ -62,3 +62,16 @@ transposed=[[row[i] for row in matrix] for i in range(len(matrix[0]))]
 # transposed=[[row[i] for row in matrix] for i in range(len(matrix[0]))]
 # print("The Matrix original:",matrix)
 # print("The transposed of matrix:",transposed)
+
+
+# SHAPE NUMBER2
+matrix2 = [[1,2,3,12],[4,5,6,13],[7,8,9,14],[5,4,3,15]]  # Matriz original
+transposed = []  # Lista vacía donde se almacenará la matriz transpuesta
+for i in range(len(matrix2[0])):  # Iteramos sobre las columnas de la matriz original (3 columnas)
+    #i=0
+    transposed_row = []  # Lista temporal para la nueva fila (que será una columna de la original)
+    for row in matrix2:  # Iteramos sobre cada fila de la matriz original
+        print(row[i])
+        transposed_row.append(row[i])  # Agregamos el elemento en la posición i de cada fila
+    transposed.append(transposed_row)  # Agregamos la nueva fila a la matriz transpuesta
+print(transposed)  # Imprimimos la matriz transpuesta
